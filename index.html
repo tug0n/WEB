@@ -37,19 +37,40 @@
                         <h3>Bữa sáng</h3>
                         <p>Bữa sáng đầy đủ mang lại sức khỏe tuyệt vời và giúp giảm cân thành công.</p>
                         <br>
-                        <a href="#" class="btn btn-primary">Thông tin chi tiết</a>
+                        <div class="info info1">
+                            <ul>
+                                <li>Phở - 65.000đ</li>
+                                <li>Cơm Sườn - 50.000đ</li>
+                                <li>Bánh Mì - 30.000đ</li>
+                            </ul>
+                        </div><br>
+                        <a href="#" class="btn btn-primary no1">Thông tin chi tiết</a>
                     </div>
                     <div class="menu-card">
                         <h3>Bữa chính</h3>
                         <p>Top những món bestseller của nhà hàng, không thể không thử.</p>
                         <br>
-                        <a href="#" class="btn btn-primary">Thông tin chi tiết</a>
+                        <div class="info info2">
+                            <ul>
+                                <li>Cá Kho Tộ - 75.000đ</li>
+                                <li>Canh Cua - 85.000đ</li>
+                                <li>Bún Bò - 50.000đ</li>
+                            </ul>
+                        </div><br>
+                        <a href="#" class="btn btn-primary no2">Thông tin chi tiết</a>
                     </div>
                     <div class="menu-card">
                         <h3>Tráng miệng</h3>
                         <p>Tráng miệng không đi xuống dạ dày, nó đi thẳng vào tim.</p>
                         <br>
-                        <a href="#" class="btn btn-primary">Thông tin chi tiết</a>
+                        <div class="info info3">
+                            <ul>
+                                <li>Bánh Flan - 30.000đ</li>
+                                <li>Bánh Kem - 55.000đ</li>
+                                <li>Chè - 30.000đ</li>
+                            </ul>
+                        </div><br>
+                        <a href="#" class="btn btn-primary no3">Thông tin chi tiết</a>
                     </div>
                 </div>
             </div>
@@ -80,5 +101,32 @@
             </div>
         </div>
     </footer>
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <iframe src="baitap.html" id="bookingFrame"></iframe>
+        </div>
+    </div>
 </body>
+<script>
+    document.querySelectorAll(".btn-primary").forEach(button => {
+        button.addEventListener("click", function (e) {
+            e.preventDefault();
+            const card = this.closest(".menu-card");
+            const info = card.querySelector(".info");
+            if (info.style.display === "block") {
+                info.style.display = "none";
+                this.textContent = "Thông tin chi tiết";
+            } else {
+                info.style.display = "block";
+                this.textContent = "Ẩn";
+            }
+        });
+    });
+    const openBtn = document.querySelector(".btn-outline");
+        const modal = document.getElementById("bookingModal");
+        openBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            modal.style.display = "flex";
+        });
+</script>
 </html>
