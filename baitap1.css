@@ -279,6 +279,48 @@ a {
     font-size: 20px;
 }
 
+.food-grid div{
+    font-size: 20px;
+}
+
+.food-img {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.food-img img {
+    width: 350px;
+    height: 400px;
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+.food-info {
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    inset: 0;
+    background: rgb(255, 255, 255, 0.8);
+    color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 25px;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.food-img:hover img {
+    filter: brightness(60%);
+}
+
+.food-img:hover .food-info {
+    opacity: 1;
+}
+
 ul {
     list-style: none;
 }
